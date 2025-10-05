@@ -15,6 +15,25 @@ pub fn hashmap_simple(r_max: usize) {
     }
 }
 
+pub fn hashmap_simple_insert_and_remove(r_max: usize) {
+    let mut benchmap = HashMap::new();
+    for num in 0..r_max {
+        benchmap.insert(num, num);
+        benchmap.remove(&num);
+    }
+}
+
+pub fn hashmap_simple_insert_and_remove_separate_for_loops(r_max: usize) {
+    let mut benchmap = HashMap::new();
+    for num in 0..r_max {
+        benchmap.insert(num, num);
+    }
+    for num in 0..r_max {
+        benchmap.remove(&num);
+    }
+}
+
+
 pub fn hashmap_prealloc(r_max: usize) {
     let mut benchmap = HashMap::with_capacity(r_max);
     for num in 0..r_max {

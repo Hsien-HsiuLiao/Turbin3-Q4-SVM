@@ -1,7 +1,8 @@
 use criterion::{black_box, criterion_group, criterion_main, Criterion};
 use dashbench::{
     dashmap_prealloc, dashmap_simple, dashmap_threaded, hashmap_prealloc, hashmap_simple,
-    hashmap_threaded, hashmap_threaded_rwlock, hashmap_range_query_simple
+    hashmap_threaded, hashmap_threaded_rwlock, hashmap_range_query_simple, 
+    hashmap_simple_insert_and_remove, hashmap_simple_insert_and_remove_separate_for_loops
 };
 
 const ITER: usize = 9000;
@@ -11,6 +12,13 @@ fn hashmap_bench(c: &mut Criterion) {
     group.bench_function("hashmap_simple", |b| b.iter(|| hashmap_simple(black_box(ITER))));
 
     group.bench_function("hashmap_prealloc", |b| b.iter(|| hashmap_prealloc(black_box(ITER))));
+    group.finish();
+}
+
+fn hashmap_bench_insert_remove(c: &mut Criterion) {
+    let mut group = c.benchmark_group("Hashmap insert remove");
+    group.bench_function("hashmap_simple_insert_and_remove", |b| b.iter(|| hashmap_simple_insert_and_remove(black_box(ITER))));
+    group.bench_function("hashmap_simple_insert_and_remove_separate_for_loops", |b| b.iter(|| hashmap_simple_insert_and_remove_separate_for_loops(black_box(ITER))));
     group.finish();
 }
 
@@ -43,6 +51,7 @@ fn hashmap_bench_range(c: &mut Criterion) {
 }
 
 criterion_group!(hashmap, hashmap_bench, hashmap_bench_range);
+criterion_group!(hashmap_insert_remove, hashmap_bench_insert_remove);
 criterion_group!(dashmap, dashmap_bench);
 criterion_group!(rayon, rayon_bench);
-criterion_main!(hashmap, dashmap, rayon);
+criterion_main!(hashmap, dashmap, rayon, hashmap_insert_remove);
