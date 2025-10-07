@@ -86,3 +86,30 @@ pub fn hashmap_range_query_simple(r_max: usize) {
     }
     let _ = benchmap.iter().filter(|(k, _)| *k > &(r_max/2)).map(|(_, v)| *v).sum::<usize>();
 }
+
+//implement and compare read operation for rwlock and mutex
+pub fn hashmap_threaded_rwlock_read(r_max: usize) {
+    let benchmap = RwLock::new(HashMap::new());
+
+    (0..r_max).into_par_iter().for_each(|i| {
+        benchmap.write().unwrap().insert(i, i);
+    });
+
+    let _ = benchmap.iter().filter(|(k, _)| *k > &(r_max/2)).map(|(_, v)| *v).sum::<usize>();
+
+
+}
+
+pub fn hashmap_threaded_mutex_read(r_max: usize) {
+    let benchmap = Mutex::new(HashMap::new());
+
+    (0..r_max).into_par_iter().for_each(|i| {
+        benchmap.lock().unwrap().insert(i, i);
+       // benchmap.write().unwrap().insert(i, i);
+    });
+
+    let _ = b
+    let _ = benchmap.iter().filter(|(k, _)| *k > &(r_max/2)).map(|(_, v)| *v).sum::<usize>();
+
+
+}
