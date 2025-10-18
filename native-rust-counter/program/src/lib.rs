@@ -8,7 +8,7 @@ use solana_program::{
     pubkey::Pubkey,
 };
 
-mod state;
+pub mod state;
 use state::*;
 
 declare_id!("Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS");
