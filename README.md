@@ -7,7 +7,11 @@
 ## Project Structure
 
 ### 📊 DashBench
+- benchmark read/write operations for different rust types
 
+### Mollusk
+- benchmarking functionality
+- write mollusk test for magicblock example, see how it interacts with SVM api
 
 
 ### 🏪 Anchor32 Marketplace
