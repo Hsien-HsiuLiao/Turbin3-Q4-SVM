@@ -12,9 +12,9 @@
 ### Mollusk
 - benchmarking functionality
 - write mollusk test for magicblock example, see how it interacts with SVM api
+- https://github.com/magicblock-labs/ephemeral-rollups-sdk/blob/main/rust/sdk/src/cpi.rs#L41
 
 
-### 🏪 Anchor32 Marketplace
 - Test different parts of SVM
 - Add/Modify sysvar
 - https://github.com/anza-xyz/mollusk/blob/main/harness/src/sysvar.rs
