@@ -4,7 +4,15 @@
 
 
 
-## Project Structure
+## Studies
+
+### Jito Bundles
+- How can a user send bundled transactions?
+- Using a typescript client, a user can create a Bundle using the Jito TS SDK
+- Then add tx to the bundle
+- Using SearcherClient from the SDK, call sendBundle with the bundle as arg
+- The block engine will find Jito validator leader
+- Jito validator will add txns to blockchain
 
 ### 📊 DashBench
 - benchmark read/write operations for different rust types
