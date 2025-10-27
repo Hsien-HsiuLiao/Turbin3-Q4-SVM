@@ -6,12 +6,19 @@
 
 ## Studies
 
+### SVM API
+- https://www.anza.xyz/blog/anzas-new-svm-api
+- "State Channels: Projects can build SVM-based state channels, which can power a wide range of exciting and creative use cases. With state channels, a protocol can restrict which types of transactions are permitted in their network, and can choose to limit connections to strictly peer-to-peer or party-based. When the channel is eventually closed, the final results of the channel’s transactions are posted to the main chain."
+- https://ethereum.org/developers/docs/scaling/state-channels/
+- https://github.com/anza-xyz/agave/blob/master/svm/doc/spec.md
+- example https://github.com/buffalojoec/paytube
+
 ### Jito Bundles
 - How can a user send bundled transactions?
 - Using a typescript client, a user can create a Bundle using the Jito TS SDK
 - Then add tx to the bundle
 - Using SearcherClient from the SDK, call sendBundle with the bundle as arg
-- The block engine will find Jito validator leader
+- The block engine will find Jito validator leader and send bundles txns
 - Jito validator will add txns to blockchain
 
 ### 📊 DashBench
