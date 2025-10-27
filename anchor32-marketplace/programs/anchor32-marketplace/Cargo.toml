@@ -28,6 +28,7 @@ anchor-lang = "0.32.1"
 [dev-dependencies]
 solana-sdk = "3.0.0"
 mollusk-svm = { path = "../../../mollusk/harness", version = "0.7.0" }
+mollusk-svm-bencher = "0.7.0"
 
 [lints.rust]
 unexpected_cfgs = { level = "warn", check-cfg = ['cfg(target_os, values("solana"))'] }
