@@ -1,14 +1,14 @@
-pub fn add(left: u64, right: u64) -> u64 {
-    left + right
+use {
+    
+    solana_client::rpc_client::RpcClient,
+   
+    solana_svm::transaction_processor::{
+        TransactionProcessingConfig, TransactionProcessingEnvironment,
+    },
+    
+};
+
+pub struct StateChannel {
+
 }
 
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn it_works() {
-        let result = add(2, 2);
-        assert_eq!(result, 4);
-    }
-}
