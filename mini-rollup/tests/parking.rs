@@ -28,6 +28,7 @@ fn test_native_sol() {
 
     let rpc_client = test_validator.get_rpc_client();
 
+    //opens a channel
     let paytube_channel = PayTubeChannel::new(vec![payer, alice, bob, will], rpc_client);
 
     /* 
@@ -55,6 +56,8 @@ fn test_native_sol() {
         previous_status: ParkingSpaceStatus,
         new_status: ParkingSpaceStatus,
     }
+
+    another struct for payment transaction or optional field in ParkingSpaceUpdate
 
     
     */
