@@ -12,6 +12,10 @@
 - https://ethereum.org/developers/docs/scaling/state-channels/
 - https://github.com/anza-xyz/agave/blob/master/svm/doc/spec.md
 - example https://github.com/buffalojoec/paytube
+- for paytube, sudo pacman -S clang
+- needed for libclang
+- sudo pacman -S llvm-libs
+- sudo ln -sf /usr/lib/libxml2.so.2.13.6 /usr/lib/libxml2.so.16
 
 ### Jito Bundles
 - How can a user send bundled transactions?
